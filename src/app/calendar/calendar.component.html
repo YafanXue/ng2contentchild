@@ -1,0 +1,16 @@
+<table border=2 width="500px">
+<tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr>
+  <tr *ngFor="let days of dates" >
+         <td *ngFor="let day of days; let i = index;" >
+           <div *ngIf="day>0">
+             {{ day }}
+             <!-- After seven iterations a new `<tr>` should be aded -->
+     <app-daypart [target]="day">
+       <app-event ></app-event>
+     </app-daypart>
+           </div>
+        </td>
+     </tr>
+
+
+</table>
